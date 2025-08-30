@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>CPR Decision Engine</h1>
+
+  <div class="inputs">
+    <div class="input-group">
+      <label>Yesterday Close</label>
+      <select (change)="onSelectChange(yesterdayClose, $event)">
+        <option value="" selected>Select</option>
+        <option *ngFor="let opt of yesterdayCloseOptions" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Today Open</label>
+      <select (change)="onSelectChange(todayOpen, $event)">
+        <option value="" selected>Select</option>
+        <option *ngFor="let opt of todayOpenOptions" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Range Relation</label>
+      <select (change)="onSelectChange(rangeRelation, $event)">
+        <option value="" selected>Select</option>
+        <option *ngFor="let opt of rangeRelationOptions" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>CPR Width</label>
+      <select (change)="onSelectChange(cprWidth, $event)">
+        <option value="" selected>Select</option>
+        <option *ngFor="let opt of cprWidthOptions" [value]="opt">{{ opt }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="result" *ngIf="result(); else placeholder">
+    <h2>Decision Output</h2>
+    <div class="result-row">
+      <div><strong>View:</strong> {{ result()?.view }}</div>
+      <div><strong>Day Type:</strong> {{ result()?.dayType }}</div>
+      <div><strong>Action:</strong> {{ result()?.action }}</div>
+      <div><strong>Entry Trigger:</strong> {{ result()?.entry }}</div>
+      <div><strong>Stop-loss:</strong> {{ result()?.stop }}</div>
+      <div><strong>Target:</strong> {{ result()?.target }}</div>
+      <div><strong>Violation Rule:</strong> {{ result()?.violation }}</div>
+    </div>
+  </div>
+
+  <ng-template #placeholder>
+    <div class="placeholder">Select any input to see the decision output</div>
+  </ng-template>
+</div>

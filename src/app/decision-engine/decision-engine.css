@@ -1,0 +1,93 @@
+.container {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f0f1f, #1c1c2f);
+  color: #e0e0e0;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00ffe0;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.input-group {
+  flex: 1 1 22%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #00ffe0;
+}
+
+.input-group select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  background: #1c1c2f;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.input-group select:hover {
+  background: #27273f;
+  cursor: pointer;
+}
+
+.result {
+  background: #1c1c2f;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.result h2 {
+  color: #00ffe0;
+  margin-bottom: 1rem;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.result-row div {
+  background: #27273f;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.result-row div:hover {
+  background: #00ffe0;
+  color: #1c1c2f;
+  font-weight: 600;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffe0;
+}
+
+.placeholder {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
